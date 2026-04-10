@@ -1,0 +1,8 @@
+2026-04-08 18:42:42 - main - INFO - IoT Botnet Detector initialized
+2026-04-08 18:42:42 - main - INFO - Loading dataset...
+2026-04-08 18:42:42 - main - INFO - Loaded 19528 samples with 115 features
+2026-04-08 18:42:42 - main - INFO - Class distribution:
+binary_label
+0    19528
+Name: count, dtype: int64
+2026-04-08 18:42:47 - main - INFO - Preparing data...

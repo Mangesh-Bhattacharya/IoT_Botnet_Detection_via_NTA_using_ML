@@ -1,0 +1,102 @@
+# Project Configuration File
+# IoT Botnet Detection - Group 20
+
+# Data Configuration
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  test_size: 0.3
+  validation_size: 0.15
+  random_state: 42
+  
+# Feature Engineering
+features:
+  n_features: 115
+  scaling_method: "standard"  # Options: standard, minmax, robust
+  feature_selection: true
+  n_top_features: 50
+  
+# Model Configuration
+models:
+  random_forest:
+    n_estimators: 100
+    max_depth: 20
+    min_samples_split: 5
+    min_samples_leaf: 2
+    random_state: 42
+    n_jobs: -1
+    
+  svm:
+    kernel: "rbf"
+    C: 1.0
+    gamma: "scale"
+    random_state: 42
+    
+  logistic_regression:
+    penalty: "l2"
+    C: 1.0
+    max_iter: 1000
+    random_state: 42
+    solver: "lbfgs"
+    
+  neural_network:
+    hidden_layers: [128, 64, 32]
+    activation: "relu"
+    optimizer: "adam"
+    learning_rate: 0.001
+    batch_size: 64
+    epochs: 50
+    dropout_rate: 0.3
+    early_stopping_patience: 10
+    
+  gradient_boosting:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: 5
+    random_state: 42
+    
+# Training Configuration
+training:
+  cross_validation_folds: 5
+  use_stratified_kfold: true
+  verbose: true
+  save_best_model: true
+  
+# Hyperparameter Tuning
+hyperparameter_tuning:
+  method: "grid_search"  # Options: grid_search, random_search, bayesian
+  cv_folds: 3
+  n_iter: 50  # For random search
+  
+# Evaluation
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - roc_auc
+  generate_confusion_matrix: true
+  generate_roc_curve: true
+  generate_classification_report: true
+  
+# Paths
+paths:
+  models_dir: "models/saved_models/"
+  results_dir: "results/"
+  figures_dir: "results/figures/"
+  reports_dir: "results/reports/"
+  logs_dir: "logs/"
+  
+# Logging
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  save_to_file: true
+  
+# Experiment Tracking
+experiment:
+  track_experiments: true
+  experiment_name: "iot_botnet_detection"
+  save_metrics: true
+  save_model_artifacts: true

@@ -1,0 +1,19 @@
+# Core Data Science Libraries - Modern Versions (No Build Required)
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Utilities
+PyYAML>=5.4.0
+joblib>=1.0.0
+
+# Optional - Deep Learning (skip if you don't need Neural Networks)
+# tensorflow>=2.10.0
+
+# Optional - For Jupyter notebooks
+# jupyter>=1.0.0
+# ipykernel>=6.0.0
